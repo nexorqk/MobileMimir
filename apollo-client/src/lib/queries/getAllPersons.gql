@@ -1,0 +1,14 @@
+query GetAllPersons($username: String, $locations: [Int!]) {
+  getAllPersons(username: $username, locations: $locations) {
+    id
+    username
+    avatar
+    statuses {
+      id
+      material_id
+      created_at
+      status
+      returnDate
+    }
+  }
+}

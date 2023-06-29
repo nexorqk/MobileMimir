@@ -1,0 +1,38 @@
+query GetAllMaterials(
+  $input: SearchInput
+  $limit: Int
+  $offset: Int
+  $sortBy: String
+  $sortDir: SortDir
+) {
+  getAllMaterials(
+    input: $input
+    limit: $limit
+    offset: $offset
+    sortBy: $sortBy
+    sortDir: $sortDir
+  ) {
+    author
+    category
+    created_at
+    id
+    id_type
+    identifier
+    description
+    is_donated
+    notifications {
+      material_id
+      person_id
+    }
+    picture
+    currentStatus {
+      status
+      person_id
+      returnDate
+    }
+    title
+    type
+    updated_at
+    claimCount
+  }
+}

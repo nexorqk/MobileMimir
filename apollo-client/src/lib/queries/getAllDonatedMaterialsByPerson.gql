@@ -1,0 +1,17 @@
+query GetAllDonatedMaterialsByPerson($id: ID!) {
+  getAllDonatedMaterialsByPerson(id: $id) {
+    id
+    picture
+    title
+    author
+    category
+    currentStatus {
+      id
+      created_at
+      person_id
+      status
+      returnDate
+    }
+    claimCount
+  }
+}

@@ -1,0 +1,27 @@
+query GetMaterialById($id: ID!) {
+  getMaterialById(id: $id) {
+    id
+    identifier
+    picture
+    title
+    author
+    category
+    created_at
+    updated_at
+    description
+    type
+    currentStatus {
+      id
+      person_id
+      status
+      created_at
+      returnDate
+    }
+    location {
+      id
+      location
+    }
+    claimCount
+    claimDuration
+  }
+}
