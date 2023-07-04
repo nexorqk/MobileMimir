@@ -1,26 +1,16 @@
-import {ApolloProvider} from '@apollo/client';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ApolloProvider} from '@apollo/client';
+import {NavigationContainer} from '@react-navigation/native';
+
 import {client} from './apollo-client/src';
+import {Signin} from './src/components/Signin';
 
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <View style={styles.view}>
-        <Text style={styles.text}>App</Text>
-      </View>
+      <NavigationContainer>
+        <Signin />
+      </NavigationContainer>
     </ApolloProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  view: {
-    display: 'flex',
-    flex: 1,
-  },
-  text: {
-    fontSize: 20,
-    color: '#000',
-    textAlign: 'center',
-  },
-});
